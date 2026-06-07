@@ -26,8 +26,17 @@ export const SPRITE = {
   CELL_H: 208,
   // 行 0 が idle 状態
   ROW_IDLE: 0,
-  // 各フレームの表示時間（ms）。長短を混ぜて自然な揺らぎを出す
-  FRAME_DURATIONS_MS: [280, 110, 110, 140, 140, 320],
+  // 行 1 が右向き走行、行 2 が左向き走行
+  ROW_RUNNING_RIGHT: 1,
+  ROW_RUNNING_LEFT: 2,
+  // idle 用フレーム持続（ms）。長短を混ぜて自然な揺らぎを出す
+  IDLE_FRAME_DURATIONS_MS: [280, 110, 110, 140, 140, 320],
+  // running 用フレーム持続（ms）。120ms x7 + 終端 220ms
+  RUNNING_FRAME_DURATIONS_MS: [120, 120, 120, 120, 120, 120, 120, 220],
+  // 1 回の pointermove で観測した水平移動量がこの値以上なら running と判定
+  RUNNING_DX_THRESHOLD_PX: 2,
+  // ドラッグ中でもこのミリ秒以上動きが無ければ idle に戻す
+  RUNNING_IDLE_REVERT_MS: 120,
 } as const;
 
 // Agent SDK 関連の固定設定（Main プロセスで利用）
