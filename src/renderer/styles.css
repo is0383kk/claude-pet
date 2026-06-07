@@ -1,0 +1,190 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", "Yu Gothic UI", sans-serif;
+  font-size: 13px;
+  color: #1f2329;
+}
+
+body {
+  user-select: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#pet-area {
+  position: relative;
+  width: 192px;
+  height: 208px;
+  flex: 0 0 auto;
+  cursor: grab;
+}
+
+#pet-area:active {
+  cursor: grabbing;
+}
+
+#pet {
+  display: block;
+  width: 192px;
+  height: 208px;
+  background: transparent;
+  pointer-events: none;
+}
+
+#pet-error {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+  color: #c0392b;
+  border: 1px solid #c0392b;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+#chat {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  user-select: text;
+}
+
+#chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#chat-title {
+  font-size: 12px;
+  color: #555;
+}
+
+#quit {
+  width: 24px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  color: #555;
+  border-radius: 4px;
+}
+
+#quit:hover {
+  background: rgba(255, 0, 0, 0.12);
+  color: #c0392b;
+}
+
+#history {
+  flex: 1 1 auto;
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#history li {
+  padding: 6px 8px;
+  border-radius: 8px;
+  max-width: 100%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+#history li.user {
+  align-self: flex-end;
+  background: #d6e7ff;
+}
+
+#history li.assistant {
+  align-self: flex-start;
+  background: #f1f3f5;
+}
+
+#history li.pending {
+  align-self: flex-start;
+  background: #f1f3f5;
+  color: #888;
+  font-style: italic;
+}
+
+#history li.error {
+  align-self: stretch;
+  background: #fdecea;
+  color: #b71c1c;
+}
+
+#composer {
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+#input {
+  flex: 1 1 auto;
+  resize: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 4px 6px;
+  font: inherit;
+  outline: none;
+}
+
+#input:focus {
+  border-color: #4a90e2;
+}
+
+#send {
+  flex: 0 0 auto;
+  padding: 0 12px;
+  border: none;
+  border-radius: 6px;
+  background: #4a90e2;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+#send:disabled {
+  background: #b0c4de;
+  cursor: not-allowed;
+}
