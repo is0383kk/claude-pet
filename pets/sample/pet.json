@@ -1,0 +1,6 @@
+{
+  "id": "sample",
+  "displayName": "Sample",
+  "description": "A simple orange blocky creature with tiny square eyes and four short legs.",
+  "spritesheetPath": "spritesheet.webp"
+}

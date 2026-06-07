@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>claude-pet</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="pet-area">
+        <canvas id="pet" width="192" height="208"></canvas>
+        <div id="pet-error" hidden>読み込み失敗</div>
+      </div>
+      <section id="chat" data-no-drag>
+        <header id="chat-header">
+          <span id="chat-title">アシスタント</span>
+          <button id="quit" type="button" aria-label="終了">×</button>
+        </header>
+        <ol id="history"></ol>
+        <form id="composer">
+          <textarea
+            id="input"
+            placeholder="メッセージを入力 (Enterで送信 / Shift+Enterで改行)"
+            rows="2"
+          ></textarea>
+          <button id="send" type="submit">送信</button>
+        </form>
+      </section>
+    </div>
+    <script type="module" src="../../dist/renderer/renderer/main.js"></script>
+  </body>
+</html>
